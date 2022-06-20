@@ -1,0 +1,14 @@
+@use "../abstracts" as abstracts;
+
+.intro-section{
+  width: 100%;
+  text-align: center;
+  @include abstracts.breakpoints-up(large){
+    width: 60%;
+    text-align: initial;
+  }
+  >p{
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+  }
+}

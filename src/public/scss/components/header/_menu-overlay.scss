@@ -1,0 +1,27 @@
+@use "../../abstracts" as abstracts;
+
+.menu-overlay{
+  position: fixed;
+  top: calc(15vh);
+  width: min(100% - abstracts.convertPxToRem(40) /* 2.5rem */, abstracts.convertPxToRem(1000) /* 1000px */);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: abstracts.convertPxToRem(10);
+  background-color: var(--0-common-color);
+
+  &__list{
+    margin: 0;
+    padding:  1rem 0;
+  }
+  &__item{
+    text-align: center;
+  }
+  &__link{
+    padding: .5rem 0rem;
+    width: 100%;
+  }
+  //!Parte de la animación
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}

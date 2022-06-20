@@ -1,0 +1,30 @@
+@use "../../abstracts" as abstracts;
+
+.card-feature{
+  /* border: 1px solid grey; */
+  &__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+
+    @include abstracts.breakpoints-up(large){
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+    }
+  }
+  &__title{
+    margin-bottom: 1rem;
+    text-align: center;
+    @include abstracts.breakpoints-up(large){
+        text-align: initial;
+    }
+  }
+  &__description{
+    text-align: center;
+    font-size: var(--small-font-size);
+    @include abstracts.breakpoints-up(large){
+        text-align: justify;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use "../../abstracts" as abstracts;
+
+.hero{
+  &__text{
+    text-align: center;
+    width: 90%;
+    margin-inline: auto;
+    @include abstracts.breakpoints-up(large){
+      text-align: initial;
+      width: 100%;
+      margin-inline: none;
+    }
+    >h1{
+      font-size: var(--bigger-font-size);
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      @include abstracts.breakpoints-up(large){
+        margin-top: 0rem;
+      }
+    }
+    > p{
+      font-size: var(--normal-font-size);
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    > a{
+      font-size: var(--small-font-size);
+      margin-bottom: 2rem;
+      @include abstracts.breakpoints-up(large){
+        margin-bottom: 0rem;
+      }
+    }
+  }
+  &__image{
+    background-image: url("/src/public/images/bg-intro-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    @include abstracts.breakpoints-up(large){
+      //! La esquina superior izquierda es 0% 0%. La esquina inferior derecha es 100% 100%. Si solo especifica un valor, el otro valor será 50%. El valor predeterminado es: 0% 0%
+      background-image: url("/src/public/images/bg-intro-desktop.svg");
+      background-position: -25% 75%;
+      background-size: 140% 150%;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 0;
+      right: 0;
+      height: 145%;
+      background-image: url("/src/public/images/image-mockups.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      @include abstracts.breakpoints-up(large){
+        top: -20%;
+        height: 145%;
+        background-position: 195% center;
+        background-size: 85% 100%;
+      }
+    }
+  }
+}

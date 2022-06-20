@@ -1,0 +1,41 @@
+@use "../../abstracts" as abstracts;
+
+.footer{
+  background-color: var(--main-primary-color);
+  &__social{
+    display: flex;
+    align-items: flex-end;
+    >a:not(:last-child){
+      margin-right: 1rem;
+    }
+    svg path{
+      transition: fill .3s ease-in-out;
+    }
+    a:hover svg path{
+      fill: var(--main-secondary-color);
+    }
+  }
+  &__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include abstracts.breakpoints-up(large){
+      align-items: flex-start;
+    }
+    > a{
+      color: var(--0-common-color);
+      margin-bottom: .5rem;
+      transition: color .3s ease-in-out;
+      &:hover{
+        color: var(--main-secondary-color);
+      }
+    }
+
+  }
+  &__copyright{
+    > p{
+      margin: 0rem;
+    }
+  }
+}

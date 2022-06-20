@@ -1,0 +1,42 @@
+@use "../abstracts" as abstracts;
+
+.button{
+  padding: .5rem 1.5rem;
+  /* border: 1px solid var(--400-common-color); */
+  border-radius: abstracts.convertPxToRem(50);
+  // background-color: var(--main-secondary-color);
+  color: white;
+  font-size: var(--small-font-size);
+  font-weight: bold;
+  cursor: pointer;
+  // &:hover{
+  //   background-color: var(--light-secondary-color);
+  // }
+}
+.button--cta{
+  position: relative;
+  padding: .5rem 2rem;
+  border-radius: abstracts.convertPxToRem(50);
+  //!Aqui se pone background image xq después se hace un contraste con un fondo blanco, entonces solo para hacer contrastes se pondrá este background image nada mas xq si pones background color, no podrás hacer contraste de nada.
+  background-image: linear-gradient(to right, var(--main-secondary-color) 0 40%, var(--main-ternary-color) 90% 100%);
+  overflow: hidden;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+  }
+  &:hover::before{
+     opacity: 1;
+  }
+
+  // &:hover{
+  //   background: linear-gradient(to right, var(--light-secondary-color) 0 40%, var(--light-ternary-color) 90% 100%);
+  // }
+}
+

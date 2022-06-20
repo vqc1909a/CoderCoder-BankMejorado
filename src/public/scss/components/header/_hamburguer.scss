@@ -1,0 +1,33 @@
+@use "../../abstracts" as abstracts;
+
+.hamburguer{
+  cursor: pointer;
+  > span{
+    display: block;
+    width: abstracts.convertPxToRem(26);
+    height: abstracts.convertPxToRem(2);
+    background-color: var(--main-primary-color);
+    transition: all .3s ease-in-out /* cubic-bezier(0.4, 0, 0.2, 1) */;
+    &:not(:last-child){
+      margin-bottom: abstracts.convertPxToRem(5);
+    }
+  }
+}
+
+//!Animations
+.hamburguer-open{
+  >span{
+    transform-origin: abstracts.convertPxToRem(3) abstracts.convertPxToRem(1);
+
+  }
+  > span:first-child{
+    transform: rotate(45deg);
+  }
+  > span:nth-child(2n){
+    opacity: 0;
+  }
+  > span:last-child{
+    transform: rotate(-45deg);
+  }
+}
+

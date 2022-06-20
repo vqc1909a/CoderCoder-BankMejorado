@@ -1,0 +1,25 @@
+
+@use "../../abstracts" as abstracts;
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--zIndex-speedDial);
+  background: linear-gradient(to bottom, var(--main-primary-color), transparent);
+
+  //!Parte de la animación
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+
+  //!Esto es otra forma de hacer una animcaión, tienes que repetir el estado 0 aquí, lo veo cagaoo para algo simple, pero para cosas complejas es jesus
+  /* visibility: hidden;
+  opacity: 0;
+  &.overlay-open{
+    animation: fade-in .3s ease-in-out forwards;
+  } */
+
+}

@@ -1,0 +1,39 @@
+@use "../../abstracts" as abstracts;
+
+//! No olvides que el first child y last chidl y demás siempre va a funcionar cuando estos elementos esten junntos o sea sean hermanos
+.main-nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+  &__link {
+    position: relative;
+    padding: .5rem;
+    color: var(--primary-text-color);
+    transition: color .3s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      left: .5rem;
+      bottom: 0;
+      right: .5rem;
+      height: abstracts.convertPxToRem(3);
+      background-color: var(--main-secondary-color);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .3s ease-in-out;
+    }
+    &:hover::after{
+      transform: scaleX(1);
+    }
+    &:hover{
+      color: var(--main-primary-color);
+    }
+  }
+}
