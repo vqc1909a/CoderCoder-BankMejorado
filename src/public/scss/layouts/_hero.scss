@@ -19,7 +19,8 @@
     }
   }
   &__image{
-    min-height: 45vh;
+    //Jamás utilizar  valore de minheight para divs internos solo px 
+    min-height: abstracts.convertPxToRem(400);
     flex: 4;
     order: 1;
     align-self: stretch;
